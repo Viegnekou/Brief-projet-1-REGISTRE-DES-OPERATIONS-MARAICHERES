@@ -39,9 +39,33 @@ export function trouverParId(operations, id) {
 // obligatoires (n'importe quel texte non vide) · operation présente dans OPERATIONS
 // · coutFCFA nombre positif ou nul.
 export function verifierOperation(saisie, operations) {
-  throw new Error('TODO : coder verifierOperation dans src/registre.js');
-}
+  const erreurs = [];
+  if (String(saisie.id ?? '').trim() === '') {
+    erreurs.push("L'identifiant est obligatoire.");
+  } else if (operations.some((operation) => operation.id === saisie.id)) {
+    erreurs.push('Cet identifiant est déjà utilisé.');
+  }
 
+  // Règle 2 : date réelle au format AAAA-MM-JJ
+  if (!estDateValide(saisie.date)) {
+    erreurs.push('La date doit être une date réelle au format AAAA-MM-JJ.');
+  }
+  if (String(saisie.parcelle ?? '').trim() === '') {
+    erreurs.push('La parcelle est obligatoire.');
+  }
+  if (String(saisie.culture ?? '').trim() === '') {
+    erreurs.push('La culture est obligatoire.');
+  }
+  if (!OPERATIONS.includes(saisie.operation)) {
+    erreurs.push("L'opération doit être : semis, arrosage, désherbage, repiquage ou récolte.");
+  }
+  const cout = versNombre(saisie.coutFCFA);
+  if (Number.isNaN(cout) || cout < 0) {
+    erreurs.push('Le coût doit être un nombre positif ou nul (en FCFA).');
+  }
+
+  return erreurs;
+}
 // Fabrique l'opération à enregistrer à partir d'une saisie VALIDE : coutFCFA devient un nombre.
 export function creerOperation(saisie) {
   throw new Error('TODO : coder creerOperation dans src/registre.js');
