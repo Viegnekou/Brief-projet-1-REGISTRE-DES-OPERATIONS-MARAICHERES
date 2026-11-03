@@ -45,8 +45,6 @@ export function verifierOperation(saisie, operations) {
   } else if (operations.some((operation) => operation.id === saisie.id)) {
     erreurs.push('Cet identifiant est déjà utilisé.');
   }
-
-  // Règle 2 : date réelle au format AAAA-MM-JJ
   if (!estDateValide(saisie.date)) {
     erreurs.push('La date doit être une date réelle au format AAAA-MM-JJ.');
   }
@@ -68,7 +66,14 @@ export function verifierOperation(saisie, operations) {
 }
 // Fabrique l'opération à enregistrer à partir d'une saisie VALIDE : coutFCFA devient un nombre.
 export function creerOperation(saisie) {
-  throw new Error('TODO : coder creerOperation dans src/registre.js');
+  return {
+    id: saisie.id,
+    date: saisie.date,
+    parcelle: saisie.parcelle,
+    culture: saisie.culture,
+    operation: saisie.operation,
+    coutFCFA: versNombre(saisie.coutFCFA),
+  };
 }
 
 // Ajoute la saisie au registre si elle est valide (verifierOperation, puis creerOperation).
