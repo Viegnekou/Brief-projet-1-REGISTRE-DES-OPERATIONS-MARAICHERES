@@ -22,8 +22,14 @@ export function listerOperations(operations) {
 
 // Renvoie l'opération qui a cet identifiant, ou undefined si elle n'existe pas.
 export function trouverParId(operations, id) {
-  throw new Error('TODO : coder trouverParId dans src/registre.js');
+  for (const operation of operations) {
+    if (operation.id === id) {
+      return operation;
+    }
+  }
+  return undefined;
 }
+
 
 // Contrôle une saisie AVANT de l'ajouter. Tous les champs arrivent sous forme de TEXTE :
 // { id: 'O11', date: '2026-10-27', parcelle: 'P1', culture: 'tomate', operation: 'récolte', coutFCFA: '2500' }
