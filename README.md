@@ -4,7 +4,7 @@
 
 ## Contexte
 
-✏️ *En cinq à huit phrases : qui utilise l'outil (son métier, son geste professionnel), son besoin, ce qu'il saisit, ce que le programme lui affiche, ce que l'outil ne fait pas.*
+La responsable d'une exploitation maraîchère pédagogique note aujourd'hui ses opérations — semis, arrosage, désherbage, repiquage, récolte — dans un carnet papier. Sur le terrain, elle observe la parcelle avec la fiche agronomique, identifie la culture et l'opération, relève la date et le coût, vérifie les unités en FCFA, puis restitue un résumé. Ce carnet papier provoque des oublis de suivi et rend les opérations difficiles à consulter. L'outil que nous construisons lui permet de saisir ces opérations depuis un terminal, de les enregistrer dans `donnees/operations.json`, de retrouver une intervention par identifiant, par parcelle ou par culture, de trier par coût ou par date, et de totaliser les dépenses par parcelle. En revanche, il n'enregistre que des dépenses : sans les revenus, il ne mesure pas la rentabilité de l'exploitation. Il ne gère ni plusieurs utilisateurs, ni interface graphique, ni synchronisation réseau.
 
 ## Prérequis et lancement
 
