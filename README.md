@@ -23,7 +23,7 @@ Sous PowerShell, si `npm` est bloqué : `npm.cmd test`.
 
 ✏️ *Cochez seulement ce qui marche : `- [x]`.*
 
-- [ ] Données lues et enregistrées dans `donnees/operations.json`
+- [x] Données lues et enregistrées dans `donnees/operations.json`
 - [ ] Ajouter une opération, saisies invalides refusées sans arrêter le programme
 - [ ] Lister les opérations, message si le registre est vide
 - [ ] Rechercher par identifiant ou par parcelle ; filtrer par culture
