@@ -4,7 +4,7 @@
 
 ## Contexte
 
-La responsable d'une exploitation maraîchère pédagogique note aujourd'hui ses opérations — semis, arrosage, désherbage, repiquage, récolte — dans un carnet papier. Sur le terrain, elle observe la parcelle avec la fiche agronomique, identifie la culture et l'opération, relève la date et le coût, vérifie les unités en FCFA, puis restitue un résumé. Ce carnet papier provoque des oublis de suivi et rend les opérations difficiles à consulter. L'outil que nous construisons lui permet de saisir ces opérations depuis un terminal, de les enregistrer dans `donnees/operations.json`, de retrouver une intervention par identifiant, par parcelle ou par culture, de trier par coût ou par date, et de totaliser les dépenses par parcelle. En revanche, il n'enregistre que des dépenses : sans les revenus, il ne mesure pas la rentabilité de l'exploitation. Il ne gère ni plusieurs utilisateurs, ni interface graphique, ni synchronisation réseau.
+La responsable d'une exploitation maraîchère pédagogique note aujourd'hui ses opérations  semis, arrosage, désherbage, repiquage, récolte  dans un carnet papier. Sur le terrain, elle observe la parcelle avec la fiche agronomique, identifie la culture et l'opération, relève la date et le coût, vérifie les unités en FCFA, puis restitue un résumé. Ce carnet papier provoque des oublis de suivi et rend les opérations difficiles à consulter. L'outil que nous construisons lui permet de saisir ces opérations depuis un terminal, de les enregistrer dans `donnees/operations.json`, de retrouver une intervention par identifiant, par parcelle ou par culture, de trier par coût ou par date, et de totaliser les dépenses par parcelle. En revanche, il n'enregistre que des dépenses : sans les revenus, il ne mesure pas la rentabilité de l'exploitation. Il ne gère ni plusieurs utilisateurs, ni interface graphique, ni synchronisation réseau.
 
 ## Prérequis et lancement
 
@@ -25,10 +25,10 @@ Sous PowerShell, si `npm` est bloqué : `npm.cmd test`.
 
 - [x] Données lues et enregistrées dans `donnees/operations.json`
 - [x] Ajouter une opération, saisies invalides refusées sans arrêter le programme
-- [ ] Lister les opérations, message si le registre est vide
-- [ ] Rechercher par identifiant ou par parcelle ; filtrer par culture
-- [ ] Trier par coût ou par date
-- [ ] Synthèse : total, nombre et total par parcelle, coût minimum et maximum
+- [x] Lister les opérations, message si le registre est vide
+- [x] Rechercher par identifiant ou par parcelle ; filtrer par culture
+- [x] Trier par coût ou par date
+- [x] Synthèse : total, nombre et total par parcelle, coût minimum et maximum
 - [ ] Bonus : supprimer et modifier une opération (choix 6 et 7)
 - [ ] Bonus : tri par coût décroissant, parcelle la plus coûteuse
 
