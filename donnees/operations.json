@@ -78,5 +78,13 @@
     "culture": "aubergine",
     "operation": "désherbage",
     "coutFCFA": 6000
+  },
+  {
+    "id": "003",
+    "date": "2026-11-04",
+    "parcelle": "P1",
+    "culture": "amémè",
+    "operation": "récolte",
+    "coutFCFA": 250
   }
 ]
