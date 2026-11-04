@@ -1,6 +1,6 @@
 # Registre des opérations maraîchères
 
-> Projet individuel du SAS DFS, brief 1 (sujet : [SUJET.md](SUJET.md)). Remplacez chaque ✏️ par votre texte, puis supprimez cette ligne.
+> Projet individuel du SAS DFS, brief 1 (sujet : [SUJET.md](SUJET.md)). 
 
 ## Contexte
 
@@ -21,7 +21,7 @@ Sous PowerShell, si `npm` est bloqué : `npm.cmd test`.
 
 ## Fonctionnalités
 
-✏️ *Cochez seulement ce qui marche : `- [x]`.*
+
 
 - [x] Données lues et enregistrées dans `donnees/operations.json`
 - [x] Ajouter une opération, saisies invalides refusées sans arrêter le programme
@@ -34,16 +34,26 @@ Sous PowerShell, si `npm` est bloqué : `npm.cmd test`.
 
 ## Données
 
-✏️ *Le fichier, le nombre d'opérations, les champs (voir [docs/dictionnaire-donnees.md](docs/dictionnaire-donnees.md)), les unités. Rappelez qu'elles sont fictives.*
+Fichier donnees/operations.json, 10 opérations fictives au départ. Champs : id, date, parcelle, culture, operation, coutFCFA (voir docs/dictionnaire-donnees.md). Le coût est en FCFA : c'est une dépense, pas un revenu. Les données sont fictives et servent uniquement à l'exercice ; elles ne décrivent aucune exploitation réelle.
 
 ## Limites
 
-✏️ *Au moins trois. Par exemple : le registre enregistre des dépenses, pas les revenus, il ne mesure donc pas la rentabilité.*
+-Le registre enregistre des dépenses, pas les revenus : il ne mesure donc pas la rentabilité de l'exploitation.
+
+-Utilisation en terminal uniquement, pas d'interface graphique.
+
+-Pas de gestion multi-utilisateurs ni de droits d'accès : une seule personne à la fois.
+
+-Pas de synchronisation réseau : le fichier JSON est local.
+
+-Pas de gestion de stock ni de traçabilité des intrants (semences, eau, main-d'œuvre).
+
+-Le registre ne contrôle pas la cohérence parcelle/culture : on peut enregistrer une culture gombo sur la parcelle P1 alors que P1 est historiquement en tomate.
 
 ## Documents
 
-[Dictionnaire des données](docs/dictionnaire-donnees.md) · [Tâches](docs/taches.md) · [Relevé des tests](docs/releve-tests.md) · [Journal de recherche](docs/journal-recherche.md) · [Fiche agronomique](docs/fiche-agronomique.md) · [Fiche individuelle](docs/fiche-individuelle.md)
+Dictionnaire des données · Tâches · Relevé des tests · Journal de recherche · Fiche agronomique · Fiche individuelle
 
 ## Auteur
 
-✏️ *Prénom NOM, compte GitHub. Entraide : avec qui, sur quoi.*
+Koffi Boagr VIEGNEKOU, compte GitHub : viegnekou. Entraide : à compléter dans docs/fiche-individuelle.md.
