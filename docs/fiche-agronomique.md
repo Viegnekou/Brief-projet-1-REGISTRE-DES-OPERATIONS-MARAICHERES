@@ -12,8 +12,8 @@
 | `désherbage` (ex. O06) | Tout au long du cycle | Que l'opération d'entretien (enlever les mauvaises herbes) est notée pour garder une trace du travail et de son coût (ex. 6000 FCFA). |
 | `récolte` (ex. O11) | Fin du cycle | Que la date de récolte est enregistrée. Le coût de la récolte est noté, mais **pas la quantité récoltée**. |
 
-**Une donnée manquante** : le registre ne note **que des dépenses** (coûts). Il ne contient ni les **revenus** (ventes de la récolte), ni la **quantité récoltée**, ni la **surface** de la parcelle, ni le **volume d'eau** apporté. On ne peut donc pas calculer de bénéfice, ni de rendement à l'hectare.
+**Une donnée manquante** : le registre ne note que des dépenses (coûts). Il ne contient ni les revenus (ventes de la récolte), ni la quantité récoltée, ni la surface de la parcelle, ni le volume d'eau apporté. On ne peut donc pas calculer de bénéfice, ni de rendement à l'hectare.
 
-**Pourquoi le total des coûts ne dit-il pas si l'exploitation est rentable ?** Parce que la rentabilité se calcule en comparant les **revenus** aux **dépenses**. Or, le registre ne contient que les dépenses : le total (40 000 FCFA avec les données de départ) indique seulement ce que l'exploitation a **dépensé**, pas ce qu'elle a **gagné**. Sans les revenus, impossible de dire si elle est rentable. Le coach nous a d'ailleurs alertés sur ce piège : additionner des coûts ne donne pas la rentabilité.
+**Pourquoi le total des coûts ne dit-il pas si l'exploitation est rentable ?** Parce que la rentabilité se calcule en comparant les revenus aux dépenses. Or, le registre ne contient que les dépenses : le total (40 000 FCFA avec les données de départ) indique seulement ce que l'exploitation a dépensé, pas ce qu'elle a gagné. Sans les revenus, impossible de dire si elle est rentable. Le coach nous a d'ailleurs alertés sur ce piège : additionner des coûts ne donne pas la rentabilité.
 
 Sources : Fiche de référence agronomique remise par le coach agronomie, et `SUJET.md`

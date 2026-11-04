@@ -11,7 +11,12 @@ export const CHAMPS_MODIFIABLES = ['date', 'parcelle', 'culture', 'operation', '
 // Supprime du registre l'opération qui a cet identifiant.
 // Renvoie l'opération supprimée, ou undefined si elle n'existe pas (le registre ne change pas).
 export function supprimerOperation(operations, id) {
-  throw new Error('TODO Bonus : coder supprimerOperation dans src/bonus.js');
+  const index = operations.findIndex((operation) => operation.id === id);
+  if (index === -1) {
+    return undefined;
+  }
+  const supprimee = operations.splice(index, 1);
+  return supprimee[0];
 }
 
 // Modifie UN champ d'une opération. La nouvelle valeur arrive sous forme de TEXTE et suit
@@ -20,16 +25,51 @@ export function supprimerOperation(operations, id) {
 // Erreurs : identifiant introuvable · champ 'id' (non modifiable) · champ absent de CHAMPS_MODIFIABLES
 //           · valeur refusée par les règles de l'ajout.
 export function modifierOperation(operations, id, champ, valeur) {
-  throw new Error('TODO Bonus : coder modifierOperation dans src/bonus.js');
+  const operation = trouverParId(operations, id);
+  
+  if (!operation) {
+    return ['Opération introuvable.'];
+  }
+  if (champ === 'id') {
+    return ["L'identifiant n'est pas modifiable."];
+  }
+  if (!CHAMPS_MODIFIABLES.includes(champ)) {
+    return ['Ce champ n\'est pas modifiable.'];
+  }
+  const operationTest = { ...operation, [champ]: valeur };
+  const autresOperations = operations.filter((op) => op.id !== id);
+  const erreurs = verifierOperation(operationTest, autresOperations);
+  if (erreurs.length > 0) {
+    return erreurs;
+  }
+  if (champ === 'coutFCFA') {
+    operation[champ] = versNombre(valeur);
+  } else {
+    operation[champ] = valeur;
+  }
+  return [];
 }
 
 // Renvoie une COPIE triée par coût décroissant : la plus chère d'abord.
 export function trierParCoutDecroissant(operations) {
-  throw new Error('TODO Bonus : coder trierParCoutDecroissant dans src/bonus.js');
+  return [...operations].sort((a, b) => b.coutFCFA - a.coutFCFA);
 }
 
 // Renvoie la parcelle dont le total des coûts est le plus élevé : { parcelle, total },
 // ou null si le registre est vide. En cas d'égalité : la première parcelle rencontrée.
 export function parcelleLaPlusCouteuse(operations) {
-  throw new Error('TODO Bonus : coder parcelleLaPlusCouteuse dans src/bonus.js');
+  if (operations.length === 0) {
+    return null;
+  }
+  const synthese = syntheseParParcelle(operations);
+  let meilleureParcelle = null;
+  let maxTotal = -1;
+
+  for (const [parcelle, infos] of Object.entries(synthese)) {
+    if (infos.total > maxTotal) {
+      maxTotal = infos.total;
+      meilleureParcelle = parcelle;
+    }
+  }
+  return { parcelle: meilleureParcelle, total: maxTotal };
 }

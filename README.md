@@ -29,8 +29,8 @@ Sous PowerShell, si `npm` est bloqué : `npm.cmd test`.
 - [x] Rechercher par identifiant ou par parcelle ; filtrer par culture
 - [x] Trier par coût ou par date
 - [x] Synthèse : total, nombre et total par parcelle, coût minimum et maximum
-- [ ] Bonus : supprimer et modifier une opération (choix 6 et 7)
-- [ ] Bonus : tri par coût décroissant, parcelle la plus coûteuse
+- [x] Bonus : supprimer et modifier une opération (choix 6 et 7)
+- [x] Bonus : tri par coût décroissant, parcelle la plus coûteuse
 
 ## Données
 

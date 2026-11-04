@@ -7,6 +7,7 @@ import { chargerJson, enregistrerJson } from './src/stockage.js';
 import { OPERATIONS, ajouterOperation, formaterOperation, listerOperations, trouverParId } from './src/registre.js';
 import { filtrerParCulture, filtrerParParcelle, trierParCout, trierParDate } from './src/recherche.js';
 import { coutMinMax, syntheseParParcelle, totalCouts } from './src/synthese.js';
+import { supprimerOperation, modifierOperation, trierParCoutDecroissant, parcelleLaPlusCouteuse } from './src/bonus.js';
 
 const FICHIER_DONNEES = 'donnees/operations.json';
 
@@ -31,6 +32,8 @@ async function main() {
     console.log('3. Rechercher (identifiant, parcelle, culture)');
     console.log('4. Trier (coût, date)');
     console.log('5. Synthèse des dépenses');
+    console.log('6. Supprimer une opération');
+    console.log('7. Modifier une opération');
     console.log('0. Quitter');
     const choix = await demander('Votre choix : ');
     if (choix === null) {
@@ -79,7 +82,6 @@ async function main() {
         console.log('1. Par identifiant');
         console.log('2. Par parcelle');
         console.log('3. Les opérations d\'une culture');
-        
         const sousChoix = await demander('Votre choix : ');
         if (sousChoix !== null) {
           if (sousChoix === '1') {
@@ -114,12 +116,15 @@ async function main() {
         console.log('\n--- Trier ---');
         console.log('1. Par coût croissant');
         console.log('2. Par date, de la plus ancienne à la plus récente');
+        console.log('3. Par coût décroissant');
         const sousChoix = await demander('Votre choix : ');
         if (sousChoix !== null) {
           if (sousChoix === '1') {
             console.log(listerOperations(trierParCout(operations)));
           } else if (sousChoix === '2') {
             console.log(listerOperations(trierParDate(operations)));
+          } else if (sousChoix === '3') {
+            console.log(listerOperations(trierParCoutDecroissant(operations)));
           } else {
             console.log('Choix inconnu : retour au menu.');
           }
@@ -136,10 +141,44 @@ async function main() {
           }
           const minMax = coutMinMax(operations);
           console.log(`Coût minimum : ${minMax.min} FCFA · Coût maximum : ${minMax.max} FCFA`);
+          const plusCouteuse = parcelleLaPlusCouteuse(operations);
+          if (plusCouteuse) {
+            console.log(`Parcelle la plus coûteuse : ${plusCouteuse.parcelle} (${plusCouteuse.total} FCFA)`);
+          }
         } else {
           console.log('Coût minimum et maximum : aucune donnée');
         }
         console.log('Rappel : ce sont des dépenses. Sans les revenus, elles ne mesurent pas la rentabilité.\n');
+      } else if (choix === '6') {
+        console.log('\n--- Supprimer une opération ---');
+        const id = await demander('Identifiant : ');
+        if (id !== null) {
+          const supprimee = supprimerOperation(operations, id.toUpperCase());
+          if (supprimee) {
+            await enregistrerJson(FICHIER_DONNEES, operations);
+            console.log(`Opération ${id.toUpperCase()} supprimée. Le registre compte ${operations.length} opération(s).\n`);
+          } else {
+            console.log(`Opération ${id.toUpperCase()} introuvable.\n`);
+          }
+        }
+      } else if (choix === '7') {
+        console.log('\n--- Modifier une opération ---');
+        const id = await demander('Identifiant : ');
+        const champ = await demander('Champ à modifier (date, parcelle, culture, operation, coutFCFA) : ');
+        const valeur = await demander('Nouvelle valeur : ');
+        if (id !== null && champ !== null && valeur !== null) {
+          const erreurs = modifierOperation(operations, id.toUpperCase(), champ, valeur);
+          if (erreurs.length > 0) {
+            console.log('Modification refusée :');
+            for (const erreur of erreurs) {
+              console.log(`  - ${erreur}`);
+            }
+            console.log();
+          } else {
+            await enregistrerJson(FICHIER_DONNEES, operations);
+            console.log(`Opération ${id.toUpperCase()} modifiée.\n`);
+          }
+        }
       } else {
         console.log(`\nChoix inconnu : « ${choix} ». Tapez un chiffre du menu.\n`);
       }
