@@ -9,6 +9,7 @@ J'ai écrit `verifierOperation` dans `src/registre.js`. Elle reçoit une saisie 
 Ma plus grande difficulté a été de comprendre pourquoi `ajouterOperation` devait modifier le tableau (avec `push`) alors que `trierParCout` devait faire une copie (`[...operations]`). Je pensais qu'il fallait toujours copier pour ne pas modifier les données. En relisant les tests, j'ai vu que `ajouterOperation` doit ajouter l'élément au registre existant, alors que le tri ne doit pas changer l'ordre de départ. J'ai aussi eu du mal avec les fonctions asynchrones (`async`/`await`) dans `stockage.js`, car `readFile` renvoie une promesse.
 
 3. **L'entraide** : 
-- **Junior et Abdala** m'ont donné des explications, notamment sur la partie de la fiche agronomique qui me portait à confusion, car nous avions travaillé sur le terrain avec certaines fiches. Cela m'a permis de trouver une solution.
-- **Marie Carmelle** a testé mon programme pour m'aider à vérifier son bon fonctionnement.
-- J'ai également utilisé des ressources en ligne (OpenClassrooms, W3Schools, YouTube) et posé des questions à une IA (DeepSeek) pour clarifier des notions floues et structurer mes algorithmes sur papier.
+- **DJONGON Junior et KAMAGATE Abdala** m'ont donné des explications, notamment sur la partie de la fiche agronomique qui me portait à confusion, car nous avions travaillé sur le terrain avec certaines fiches. Cela m'a permis de trouver une solution.
+- **TIEMOKO Marie Carmelle** a testé mon programme pour m'aider à vérifier son bon fonctionnement.
+- J'ai également travaillé avec d'autres camarades qui ont choisi le Sujet 1 comme moi.
+- Enfin, j'ai utilisé des ressources en ligne (OpenClassrooms, W3Schools, YouTube) et posé des questions à une IA (DeepSeek) pour clarifier des notions floues, structurer mes algorithmes sur papier et rédiger les textes pour les fichiers `docs`.
