@@ -56,4 +56,9 @@ Dictionnaire des données · Tâches · Relevé des tests · Journal de recherch
 
 ## Auteur
 
-Koffi Boagr VIEGNEKOU, compte GitHub : viegnekou. Entraide : à compléter dans docs/fiche-individuelle.md.
+Prénom, nom : Koffi Boagr VIEGNEKOU · Compte GitHub : [viegnekou](https://github.com/viegnekou)
+
+ **L'entraide** : 
+- **DJONGON Junior et KAMAGATE Abdala** m'ont donné des explications, notamment sur la partie de la fiche agronomique qui me portait à confusion, car nous avions travaillé sur le terrain avec certaines fiches. Cela m'a permis de trouver une solution.
+- **TIEMOKO Marie Carmelle** a testé mon programme pour m'aider à vérifier son bon fonctionnement.
+- J'ai également travaillé avec d'autres camarades qui ont choisi le Sujet 1 comme moi.
