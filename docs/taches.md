@@ -11,8 +11,8 @@
 | Fiche 5 : synthèse ; choix 5 | Après-midi Jour 2 | Matinée Jour 3 | `npm run test:synthese` : 5 verts ; menu complet (`app.js`) |
 | Tests par un camarade ; mes propres tests | La nuit Jour 2 | Matinée Jour 3 | Testé par TIEMOKO Marie Carmelle ; tests manuels notés dans `releve-tests.md` |
 | Fiche agronomique ; README ; documents | La nuit Jour 2 | Matinée Jour 3 | Tous les fichiers `docs/` et `README.md` complétés |
-| Dépôt cloné et lancé ailleurs ; démonstration répétée | Matin Jour 3 | Apres midi Jour 3 | Démonstration faite devant les camarades qui ont choisis le meme sujet que moi |
-| Bonus | Après-midi Jour 3 | Apres midi Jour 3 | `npm run test:bonus` : 8 verts ; choix 6 et 7 ajoutés au menu |
+| Dépôt cloné et lancé ailleurs ; démonstration répétée | Matin Jour 3 | Apres midi Jour 4| Démonstration faite devant les camarades qui ont choisis le meme sujet que moi |
+| Bonus | Après-midi Jour 3 | Apres midi Jour 4| `npm run test:bonus` : 8 verts ; choix 6 et 7 ajoutés au menu |
 
 **Blocages** (le message exact, ce que j'ai essayé, la solution) : 
 - **Blocage 1 (Syntaxe)** : `SyntaxError: The requested module './src/saisie.js' does not provide an export named 'ouvrinSaisie'`.
