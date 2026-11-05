@@ -25,25 +25,17 @@ Un ajout valide (encore là après redémarrage), chaque règle refusée, une re
 
 | Action | Attendu | Obtenu | Testeur |
 | --- | --- | --- | --- |
-| Ajouter O11 valide (2026-10-27, P1, tomate, récolte, 2500) | « Opération O11 ajoutée. Le registre compte 11 opération(s). » | | |
-| Quitter puis relancer `node app.js` | O11 toujours présente (11 opérations chargées) | | |
-| Ajouter avec coût `-100` | refusé : « Le coût doit être un nombre positif ou nul (en FCFA). » | | |
-| Ajouter avec coût vide `""` | refusé (même message) | | |
-| Ajouter avec coût `"abc"` | refusé (même message) | | |
-| Ajouter avec id `O01` (doublon) | refusé : « Cet identifiant est déjà utilisé. » | | |
-| Ajouter avec date `2026-02-30` | refusé : « La date doit être une date réelle au format AAAA-MM-JJ. » | | |
-| Ajouter avec opération `labour` | refusé : « L'opération doit être … » | | |
-| Saisie avec 3 erreurs à la fois | les 3 messages s'affichent, rien n'est ajouté | | |
-| Rechercher `O03` | « O03 \| 2026-10-21 \| P1 \| tomate \| arrosage \| 2000 FCFA » | | |
-| Rechercher `O99` | « Opération O99 introuvable. » | | |
-| Rechercher parcelle `P2` | « 3 opération(s) sur la parcelle P2 : » + 3 lignes | | |
-| Rechercher culture `aubergine` | « 3 opération(s) pour la culture aubergine : » + 3 lignes | | |
-| Trier par coût croissant | commence par O05, finit par O06 | | |
-| Trier par date | O01 (2026-10-20) en premier, O10 (2026-10-26) en dernier | | |
-| Après un tri, refaire choix 2 (lister) | l'ordre d'origine est revenu | | |
-| Synthèse | 10 op., 40 000 FCFA, P1/P2/P3 conformes, min 1500, max 8000 | | |
-| Choix menu inconnu (`9`) | « Choix inconnu : « 9 ». Tapez un chiffre du menu. » + retour menu | | |
-| Ctrl+C pendant une saisie | le programme quitte proprement | | |
+| Ajouter une opération valide (O11, 2026-10-27, P1, tomate, récolte, 2500) | « Opération O11 ajoutée. Le registre compte 11 opération(s). » | `Opération O11 ajoutée. Le registre compte 11 opération(s).` | Marie Carmelle |
+| Quitter puis relancer `node app.js` | O11 toujours présente (11 opérations chargées) | `11 opération(s) chargée(s) depuis donnees/operations.json.` | Marie Carmelle |
+| Ajouter avec une date invalide | refusé : « La date doit être une date réelle au format AAAA-MM-JJ. » | `- La date doit être une date réelle au format AAAA-MM-JJ.` | Marie Carmelle |
+| Ajouter avec une opération hors liste | refusé : « L'opération doit être … » | `- L'opération doit être : semis, arrosage, désherbage, repiquage ou récolte.` | Marie Carmelle |
+| Ajouter avec un coût négatif | refusé : « Le coût doit être un nombre positif ou nul (en FCFA). » | `- Le coût doit être un nombre positif ou nul (en FCFA).` | Marie Carmelle |
+| Saisie avec 3 erreurs à la fois | les 3 messages s'affichent, rien n'est ajouté | `Opération refusée :` suivi des 3 lignes d'erreurs et `Le registre compte toujours 11 opération(s).` | Marie Carmelle |
+| Rechercher une parcelle (`P2`) | « 3 opération(s) sur la parcelle P2 : » + 3 lignes | `3 opération(s) sur la parcelle P2 :` avec O02, O05, O08 | Marie Carmelle |
+| Choix inconnu dans le sous-menu Recherche | « Choix inconnu : retour au menu. » | `Choix inconnu : retour au menu.` (tapé `003`) | Marie Carmelle |
+| Trier par coût croissant | La liste s'affiche du plus petit au plus grand (commence par O05) | `O05 , 2026-10-22, P2 , gombo , arrosage , 1500 FCFA` (en 1ère position) | Marie Carmelle |
+| Trier par date | La liste s'affiche de la plus ancienne à la plus récente | `O01 , 2026-10-20 ...` (en 1ère position) | Marie Carmelle |
+| Choix menu inconnu (dans le menu Trier) | « Choix inconnu : « 4 ». Tapez un chiffre du menu. » | `Choix inconnu : « 4 ». Tapez un chiffre du menu.` | Marie Carmelle |
 
 ## Sur un autre poste
 

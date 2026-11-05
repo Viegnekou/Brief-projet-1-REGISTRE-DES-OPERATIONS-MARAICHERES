@@ -16,4 +16,4 @@
 
 **Pourquoi le total des coûts ne dit-il pas si l'exploitation est rentable ?** Parce que la rentabilité se calcule en comparant les revenus aux dépenses. Or, le registre ne contient que les dépenses : le total (40 000 FCFA avec les données de départ) indique seulement ce que l'exploitation a dépensé, pas ce qu'elle a gagné. Sans les revenus, impossible de dire si elle est rentable. Le coach nous a d'ailleurs alertés sur ce piège : additionner des coûts ne donne pas la rentabilité.
 
-Sources : Fiche de référence agronomique remise par le coach agronomie, et `SUJET.md`
+Sources :`SUJET.md`
